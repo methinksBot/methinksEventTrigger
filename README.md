@@ -1,50 +1,37 @@
-## Create Event Trigger on iOS methinks project
+## methinks Event Trigger (iOS only)
+Integrating methinks event triggers in your app enables:
 
+- **Bookmarks:** Add timestamps to the automatically recorded videos, allowing you to quickly find the most important video segments.
+- **In-app Questions:** Ask predefined questions anywhere in the user flow.
 
-When you run a longitudinal study on methinks, you can integrate event triggers which enables,
+## Caution
+To gain the most authentic and meaningful feedback from your users, it’s strongly recommended to add event triggers in a non-intrusive way.
 
-1. **Bookmarks** on video recording with timestamp so you can find exact spots of playback
-2. **In-app question**, non-intursively asked pre-designed question for specific event when users experience is fresh
+- **Frequency of events:** Too many events will annoy your users.
+- **Time of events:** Interrupting in the middle of your user fighting a boss is never a good idea.
 
-
-
-## Be aware!
-
-Detect the right event is important. Please keep in mind situations for event trigger
-
-1. Be aware **how often** the event called. If called too many, bookmark value would be low and testers might feel interuppted too much
-2. Be sure to implement the trigger on **non active moment**. For example, when you are testing a real time PVP games, showing event trigger question will pause user's gameplay or end up unexpected errors. 
-
-*We recoomed that you implement **less than 5 event tiggers for about 30 minutes' expected usage time** * 
-
-
+We recommend less than 5 event triggers within 30 minutes.
 
 ## NSNotification
-
-
-methinks uses `NSNotification`, a native iOS API which is **crash-free** and **no impact on performace**. Implementation is simple enough for 1 line of code. **No SDK implementation** needed.
-
+methinks uses `NSNotification`, a native crash-free iOS API that has no impact on performance. Implementation is as simple as 1 line of code. No SDK implementation is needed.
 
 ## Usage
+Use **unique** `event` value in `userInfo` to create your own event trigger. 
 
-
-Use `event` value in `userInfo` to make your own event trigger. Make sure the value should be **unique**.
 ```objc
 // Post a Notification using NSNotificationCenter
-// Implement the code appropriate moment of the event, such as user just finished a tutorial.
-
+// The following example adds an event trigger at the time when users finish the tutorial
 [[NSNotificationCenter defaultCenter] postNotificationName:@"MT_EVENT_NOTIFICATION" 
                                                     object:nil
-                                                  userInfo:@{@"event":@"tutorial finished"}];
+                                                  userInfo:@{@"event":@"finished tutorial"}];
 
-// notification name is MT_EVENT_NOTIFICATION is predefined and use it as-is.
-// Use your "easy to read" value for @"event" in userInfo
+// The notification name MT_EVENT_NOTIFICATION is predefined. Please don’t change it.
+// Use human-readable strings for @"event" in userInfo
 
-//Other example will be like
-
+// More examples
 [[NSNotificationCenter defaultCenter] postNotificationName:@"MT_EVENT_NOTIFICATION" 
                                                     object:nil 
-                                                  userInfo:@{@"event":@"achieve level 10"}];
+                                                  userInfo:@{@"event":@"achieved level 10"}];
 
 [[NSNotificationCenter defaultCenter] postNotificationName:@"MT_EVENT_NOTIFICATION"
                                                     object:nil 
@@ -52,8 +39,8 @@ Use `event` value in `userInfo` to make your own event trigger. Make sure the va
 
 ```
 
-## In-app question
+## In-app Question
+Please provide methinks a list of questions you designed, one for each event trigger.
 
-Once you implement event triggers on your app, please send corresponding question for each evnet trigger. For bookmark, you don't need to send question. Please contant your methinks account executive. 
-
+No question is needed for bookmarks. Please contact your methinks account executive.
 
