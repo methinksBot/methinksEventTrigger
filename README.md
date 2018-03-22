@@ -2,7 +2,7 @@
 
 
 ##Create Event Trigger on iOS methinks project
----
+--
 
 When you run a longitudinal study on methinks, you can integrate event triggers which enables,
 
