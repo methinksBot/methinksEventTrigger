@@ -1,8 +1,5 @@
-# methinksEventTrigger #
-
-
 ## Create Event Trigger on iOS methinks project
---
+
 
 When you run a longitudinal study on methinks, you can integrate event triggers which enables,
 
@@ -12,7 +9,7 @@ When you run a longitudinal study on methinks, you can integrate event triggers 
 
 
 ## Be aware!
---
+
 Detect the right event is important. Please keep in mind situations for event trigger
 
 1. Be aware **how often** the event called. If called too many, bookmark value would be low and testers might feel interuppted too much
@@ -23,13 +20,13 @@ Detect the right event is important. Please keep in mind situations for event tr
 
 
 ## NSNotification
---
+
 
 methinks uses `NSNotification`, a native iOS API which is **crash-free** and **no impact on performace**. Implementation is simple enough for 1 line of code. **No SDK implementation** needed.
 
 
 ## Usage
---
+
 
 Use `event` value in `userInfo` to make your own event trigger. Make sure the value should be **unique**.
 ```objc
@@ -56,7 +53,7 @@ Use `event` value in `userInfo` to make your own event trigger. Make sure the va
 ```
 
 ## In-app question
---
+
 Once you implement event triggers on your app, please send corresponding question for each evnet trigger. For bookmark, you don't need to send question. Please contant your methinks account executive. 
 
 
