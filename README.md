@@ -21,7 +21,7 @@ Use **unique** `event` value in `userInfo` to create your own event trigger.
 ```objc
 // Post a Notification using NSNotificationCenter
 // The following example adds an event trigger at the time when users finish the tutorial
-[[NSNotificationCenter defaultCenter] postNotificationName:@"MT_EVENT_NOTIFICATION" 
+[[NSNotificationCenter defaultCenter] postNotificationName:@"MTK_EVENT_NOTIFICATION" 
                                                     object:nil
                                                   userInfo:@{@"event":@"finished tutorial"}];
 
@@ -29,11 +29,11 @@ Use **unique** `event` value in `userInfo` to create your own event trigger.
 // Use human-readable strings for @"event" in userInfo
 
 // More examples
-[[NSNotificationCenter defaultCenter] postNotificationName:@"MT_EVENT_NOTIFICATION" 
+[[NSNotificationCenter defaultCenter] postNotificationName:@"MTK_EVENT_NOTIFICATION" 
                                                     object:nil 
                                                   userInfo:@{@"event":@"achieved level 10"}];
 
-[[NSNotificationCenter defaultCenter] postNotificationName:@"MT_EVENT_NOTIFICATION"
+[[NSNotificationCenter defaultCenter] postNotificationName:@"MTK_EVENT_NOTIFICATION"
                                                     object:nil 
                                                   userInfo:@{@"event":@"finished first battle"}];
 
