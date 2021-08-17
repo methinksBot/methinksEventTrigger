@@ -72,7 +72,7 @@ NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MTK_EVENT_N
 <br>
 
 
-## Usage - Cusstom Log
+## Usage - Custom Log
 Use standard key-value pair for custom log. Make sure that the notification name is `MTK_CUSTOM_LOG_NOTIFICATION`
 
 <br>
